@@ -1,4 +1,5 @@
-﻿#include "tasks.h"
+﻿#include <cmath>
+#include "tasks.h"
 
 /*	Task X. Caterpillar [гусеница]
 *
@@ -38,6 +39,12 @@
 *	[output 7]: 0
 */
 
-int taskX(int h, int a, int b) {
-	return 0;
+int taskX(int h, int a, int b)
+{
+	if (h <= b || a <= b || h < 0 || a < 0 || b <= 0)
+	{
+		return 0;
+	}
+
+	return 1 + ceil((h - a) / (double)(a - b));
 }
